@@ -7,7 +7,7 @@ btn.addEventListener("click", function(){
     nav.classList.toggle('activo');
 })
 
-// Animacion
+// Animacion header
 window.addEventListener("scroll", function(){
     const screen = document.documentElement.scrollTop;    
     const header = document.querySelector(".header__section-nav");
@@ -19,6 +19,4 @@ window.addEventListener("scroll", function(){
         header.classList.remove('activo');
     }
 });
-
-
 
