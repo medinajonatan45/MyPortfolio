@@ -457,7 +457,7 @@ $primary-text-font:'Inter', sans-serif;
     }
     &__article{
         color: $primary-text-color;
-        height: 20vh;
+        height: 25vh;
     }
     &__project-buttons{
         @include Flex-System(row, space-around, center, nowrap, 1em);
@@ -507,7 +507,7 @@ $primary-text-font:'Inter', sans-serif;
 }
 @media screen and (max-width:1080px) {
     .section-3__container-projects{
-        @include Grid-System(50% 50%, auto, 0em);
+        @include Grid-System(45vw 45vw, auto, 0em);
     }
 }
 @media screen and (max-width:720px) {
@@ -515,6 +515,9 @@ $primary-text-font:'Inter', sans-serif;
         @include Flex-System(row, center, center, wrap, 0em);
     }
     .project{
+        &__article{
+            width: 70vw;
+        }
         &__span--project-button{
             display: none;
         }

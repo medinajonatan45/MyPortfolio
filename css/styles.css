@@ -484,7 +484,7 @@
 }
 .project__article {
   color: #ffffff;
-  height: 20vh;
+  height: 25vh;
 }
 .project__project-buttons {
   display: flex;
@@ -565,7 +565,7 @@
 @media screen and (max-width: 1080px) {
   .section-3__container-projects {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 45vw 45vw;
     grid-template-rows: auto;
   }
 }
@@ -577,6 +577,9 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 0em;
+  }
+  .project__article {
+    width: 70vw;
   }
   .project__span--project-button {
     display: none;
