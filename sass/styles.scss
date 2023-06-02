@@ -155,7 +155,7 @@ $primary-text-font:'Inter', sans-serif;
     }
 }
 
-@media screen and (max-width:720px){
+@media (max-width:720px){
     .header{
         &__section-nav{
             background-color: $secundary-color-transparent;
@@ -263,7 +263,7 @@ $primary-text-font:'Inter', sans-serif;
         @include Flex-System(row, flex-start, center, nowrap, 1em)
     }
 }
-@media screen and (max-width:720px) {
+@media (max-width:720px) {
     .head{
         padding-top: 20vh;
         @include Flex-System(column-reverse, space-around, center, wrap, auto);
@@ -400,14 +400,14 @@ $primary-text-font:'Inter', sans-serif;
         @include Flex-System(row, center, center, wrap, 0em);
     }
 }
-@media screen and (max-width:920px) {
+@media (max-width:920px) {
     .section-2{
         grid-template-columns: auto;
         grid-template-rows: auto auto;
     }
 }
 
-@media screen and (max-width:720px) {
+@media (max-width:720px) {
     .section-2{
         &__figure{
             width: 5em;
@@ -505,12 +505,12 @@ $primary-text-font:'Inter', sans-serif;
     80%{color:rgb(32, 114, 255);}
     80%{color:rgb(32, 255, 69);}
 }
-@media screen and (max-width:1080px) {
+@media (max-width:1080px) {
     .section-3__container-projects{
         @include Grid-System(45vw 45vw, auto, 0em);
     }
 }
-@media screen and (max-width:720px) {
+@media (max-width:720px) {
     .section-3__container-projects{
         @include Flex-System(row, center, center, wrap, 0em);
     }
