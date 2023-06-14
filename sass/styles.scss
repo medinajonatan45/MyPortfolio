@@ -118,7 +118,7 @@ $primary-text-font:'Inter', sans-serif;
         position: fixed;
         width: 100%;
         transition: all 0.5s ease;
-        z-index:999;
+        z-index:1;
 
         &.activo{
             background-color:$secundary-color;
@@ -224,6 +224,7 @@ $primary-text-font:'Inter', sans-serif;
         }
     }
     &__img{
+        opacity: 0;
         width: 25vw;
         min-width: 16em;
         border-radius: 10em;
@@ -260,7 +261,7 @@ $primary-text-font:'Inter', sans-serif;
         margin: 0;
     }
     &__section-social{
-        @include Flex-System(row, flex-start, center, nowrap, 1em)
+        @include Flex-System(row, flex-start, center, nowrap, 1em);
     }
 }
 @media (max-width:720px) {
@@ -342,7 +343,7 @@ $primary-text-font:'Inter', sans-serif;
     background-color: $primary-color;
     color: $primary-text-color;
     @include Grid-System(45% auto, auto, 0);
-    padding: 3em 0;
+    // padding: 3em 0;
 
     &__img{
         &--img-1{width: 4em;}
@@ -386,7 +387,7 @@ $primary-text-font:'Inter', sans-serif;
 .section-2{
     &__section-services{
         font-family: $primary-text-font;
-        padding: 0 3vw;
+        padding: 3em 3vw;
         color: $primary-text-color;
     }
     &__education{
@@ -397,7 +398,14 @@ $primary-text-font:'Inter', sans-serif;
         @include Flex-System(row, center, center, nowrap, 1em);
     }
     &__section-skills{
-        @include Flex-System(row, center, center, wrap, 0em);
+        // background-image: url(../img/background/background_3.jpg);
+        // background-size:cover;
+
+        &-background{
+            background-color: $primary-color-transparent;
+            height: 100%;
+            @include Flex-System(row, center, center, wrap, 0em);
+        }
     }
 }
 @media (max-width:920px) {
@@ -434,10 +442,13 @@ $primary-text-font:'Inter', sans-serif;
     }
 }
 .project{
-    background-color: $primary-color;
-    box-shadow: 15px 15px 10px 0px rgb(2, 2, 2);
+    user-select: none;
+    background-color: $secundary-color;
+    box-shadow: 15px 15px 8px 0px rgb(2, 2, 2);
     transition: all 0.5s ease;
-    filter: sepia(0.8);
+    border: 0.1em solid $primary-color;
+    // filter: sepia(0.8);
+    @include Grid-System(100%,auto auto , 0);
     
     &:hover{
         filter: sepia(0);
@@ -451,13 +462,26 @@ $primary-text-font:'Inter', sans-serif;
     }
     &__img{
         width: 100%;
+
+        &--tools{
+            width: 2.5em;
+        }
     }
     &__figcaption{
         padding: 1em;
+        @include Grid-System(auto, auto 10em auto, 0);
+    }
+    &__h3{
+        background-color: transparent;
     }
     &__article{
         color: $primary-text-color;
-        height: 25vh;
+        // height: 25vh;
+        @include Grid-System(auto, 50% 50%, 0);
+    }
+    &__tools{
+        // background-color: red;
+        @include Flex-System(row, flex-start, center, nowrap, 0.5em);
     }
     &__project-buttons{
         @include Flex-System(row, space-around, center, nowrap, 1em);
@@ -473,9 +497,9 @@ $primary-text-font:'Inter', sans-serif;
         width: 100%;
         cursor: pointer;
         border: 2px solid $quinary-color;
-        background-color: $primary-color;
+        background-color: $secundary-color;
         transition: all 0.5s ease;
-        border-radius: 10em;
+        // border-radius: 10em;
     }
     &__a:hover{
         color: $primary-color;
@@ -491,19 +515,29 @@ $primary-text-font:'Inter', sans-serif;
 .project__span{
     padding: 2px;
 
-    &--line{font-weight:normal;}
-    &--html{color: $quinary-color;}
-    &--bootstrap{color: $quinary-color;}
-    &--js{color: rgb(255, 217, 0); }
-    &--sass{color: rgb(255, 0, 187); }
-    &--php{color: rgb(255, 147, 32);}
-    &--pwa{color: rgb(251, 32, 255); animation-name: tag_pwa; animation-iteration-count: infinite; animation-duration: 3s;}
+    &--tools{
+        padding: 2px 6px;
+        border-radius: 0.2em;
+        color: $primary-color;
+        font-size: 0.8em;
+    }
+
+    &--html{background-color:$quaternary-color;}
+    &--bootstrap{background-color:$quaternary-color;}
+    &--js{background-color:$quaternary-color;}
+    &--sass{background-color:$quaternary-color;}
+    &--php{background-color:$quaternary-color;}
+    &--pwa{background-color:$quaternary-color; 
+        // animation-name: tag_pwa; 
+        // animation-iteration-count: infinite; 
+        // animation-duration: 3s;
+    }
 }
 @keyframes tag_pwa {
-    100%{color:rgb(251, 32, 255);}
-    90%{color:rgb(32, 255, 244);}
-    80%{color:rgb(32, 114, 255);}
-    80%{color:rgb(32, 255, 69);}
+    100%{background-color:rgb(251, 32, 255);}
+    90%{background-color:rgb(32, 255, 244);}
+    80%{background-color:rgb(32, 114, 255);}
+    80%{background-color:rgb(32, 255, 69);}
 }
 @media (max-width:1080px) {
     .section-3__container-projects{

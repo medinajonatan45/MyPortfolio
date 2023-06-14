@@ -97,7 +97,7 @@
   position: fixed;
   width: 100%;
   transition: all 0.5s ease;
-  z-index: 999;
+  z-index: 1;
 }
 .header__section-nav.activo {
   background-color: #0d0d0d;
@@ -219,6 +219,7 @@
   background-color: #07f9a2;
 }
 .head__img {
+  opacity: 0;
   width: 25vw;
   min-width: 16em;
   border-radius: 10em;
@@ -349,7 +350,6 @@
   display: grid;
   grid-template-columns: 45% auto;
   grid-template-rows: auto;
-  padding: 3em 0;
 }
 .section-2__img--img-1 {
   width: 4em;
@@ -399,7 +399,7 @@
 
 .section-2__section-services {
   font-family: "Inter", sans-serif;
-  padding: 0 3vw;
+  padding: 3em 3vw;
   color: #ffffff;
 }
 .section-2__education {
@@ -419,7 +419,9 @@
   flex-wrap: nowrap;
   gap: 1em;
 }
-.section-2__section-skills {
+.section-2__section-skills-background {
+  background-color: rgba(0, 0, 0, 0.7764705882);
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -461,10 +463,14 @@
 }
 
 .project {
-  background-color: #000000;
-  box-shadow: 15px 15px 10px 0px rgb(2, 2, 2);
+  user-select: none;
+  background-color: #0d0d0d;
+  box-shadow: 15px 15px 8px 0px rgb(2, 2, 2);
   transition: all 0.5s ease;
-  filter: sepia(0.8);
+  border: 0.1em solid #000000;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
 }
 .project:hover {
   filter: sepia(0);
@@ -479,12 +485,31 @@
 .project__img {
   width: 100%;
 }
+.project__img--tools {
+  width: 2.5em;
+}
 .project__figcaption {
   padding: 1em;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 10em auto;
+}
+.project__h3 {
+  background-color: transparent;
 }
 .project__article {
   color: #ffffff;
-  height: 25vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50% 50%;
+}
+.project__tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5em;
 }
 .project__project-buttons {
   display: flex;
@@ -505,9 +530,8 @@
   width: 100%;
   cursor: pointer;
   border: 2px solid #07f9a2;
-  background-color: #000000;
+  background-color: #0d0d0d;
   transition: all 0.5s ease;
-  border-radius: 10em;
 }
 .project__a:hover {
   color: #000000;
@@ -523,43 +547,43 @@
 .project__span {
   padding: 2px;
 }
-.project__span--line {
-  font-weight: normal;
+.project__span--tools {
+  padding: 2px 6px;
+  border-radius: 0.2em;
+  color: #000000;
+  font-size: 0.8em;
 }
 .project__span--html {
-  color: #07f9a2;
+  background-color: #09c184;
 }
 .project__span--bootstrap {
-  color: #07f9a2;
+  background-color: #09c184;
 }
 .project__span--js {
-  color: rgb(255, 217, 0);
+  background-color: #09c184;
 }
 .project__span--sass {
-  color: rgb(255, 0, 187);
+  background-color: #09c184;
 }
 .project__span--php {
-  color: rgb(255, 147, 32);
+  background-color: #09c184;
 }
 .project__span--pwa {
-  color: rgb(251, 32, 255);
-  animation-name: tag_pwa;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
+  background-color: #09c184;
 }
 
 @keyframes tag_pwa {
   100% {
-    color: rgb(251, 32, 255);
+    background-color: rgb(251, 32, 255);
   }
   90% {
-    color: rgb(32, 255, 244);
+    background-color: rgb(32, 255, 244);
   }
   80% {
-    color: rgb(32, 114, 255);
+    background-color: rgb(32, 114, 255);
   }
   80% {
-    color: rgb(32, 255, 69);
+    background-color: rgb(32, 255, 69);
   }
 }
 @media (max-width: 1080px) {
