@@ -29,8 +29,12 @@ $primary-text-font:'Inter', sans-serif;
     grid-template-columns: $columns;
     grid-template-rows: $rows;
 }
-
-
+// -- Screen-media --
+@mixin System-media($width){
+    @media (max-width:$width) {
+        @content;
+    }
+}
 // Styles
 .body{
     margin: 0;
@@ -322,6 +326,16 @@ $primary-text-font:'Inter', sans-serif;
     }
     &__section-text{
         color: $primary-text-color;
+        opacity: 0;
+        transform: scale(1.2);
+        transition: all 1s ease;
+
+        &.visible{
+            opacity: 1.0;
+            transform: scale(1.0);
+            transition: all 1s ease;
+            transition-delay: 1s;
+        }
     }
     &__section-button{
         padding: 2em 0;
@@ -340,8 +354,9 @@ $primary-text-font:'Inter', sans-serif;
 /********************  Section 2: Skills ********************/
 .section-2{
     user-select: none;
-    background-color: $primary-color;
+    background: linear-gradient(90deg, $primary-color, $tertiary-color);
     color: $primary-text-color;
+    @include System-media(920px){background: linear-gradient(90deg, $primary-color, $primary-color);}
     @include Grid-System(45% auto, auto, 0);
     // padding: 3em 0;
 
@@ -385,13 +400,24 @@ $primary-text-font:'Inter', sans-serif;
     }
 }
 .section-2{
+    overflow: hidden;
+    
+    &__h2{
+        transform: skewX(20deg);
+        @include System-media(920px){transform: skewX(0);}
+    }
     &__section-services{
         font-family: $primary-text-font;
-        padding: 3em 3vw;
         color: $primary-text-color;
+        background-color: $primary-color;
+        padding: 3em 3vw;
+        transform: skewX(-20deg);
+        @include System-media(920px){transform: skewX(0);}
     }
     &__education{
         padding: 1em 0;
+        transform: skewX(20deg);
+        @include System-media(920px){transform: skewX(0);}
         @include Flex-System(row, space-between, flex-start, wrap, auto);
     }
     &__section-subtitle{
@@ -402,7 +428,6 @@ $primary-text-font:'Inter', sans-serif;
         // background-size:cover;
 
         &-background{
-            background-color: $primary-color-transparent;
             height: 100%;
             @include Flex-System(row, center, center, wrap, 0em);
         }
@@ -439,6 +464,7 @@ $primary-text-font:'Inter', sans-serif;
     &__container-projects{
         padding-top: 0.5em;
         @include Grid-System(33.3% 33.3% 33.3%, auto, 0em);
+        @include System-media(1080px){ @include Grid-System(45vw 45vw, auto, 0em)}
     }
 }
 .project{
@@ -520,6 +546,7 @@ $primary-text-font:'Inter', sans-serif;
         border-radius: 0.2em;
         color: $primary-color;
         font-size: 0.8em;
+        font-weight: bold;
     }
 
     &--html{background-color:$quaternary-color;}
@@ -527,22 +554,7 @@ $primary-text-font:'Inter', sans-serif;
     &--js{background-color:$quaternary-color;}
     &--sass{background-color:$quaternary-color;}
     &--php{background-color:$quaternary-color;}
-    &--pwa{background-color:$quaternary-color; 
-        // animation-name: tag_pwa; 
-        // animation-iteration-count: infinite; 
-        // animation-duration: 3s;
-    }
-}
-@keyframes tag_pwa {
-    100%{background-color:rgb(251, 32, 255);}
-    90%{background-color:rgb(32, 255, 244);}
-    80%{background-color:rgb(32, 114, 255);}
-    80%{background-color:rgb(32, 255, 69);}
-}
-@media (max-width:1080px) {
-    .section-3__container-projects{
-        @include Grid-System(45vw 45vw, auto, 0em);
-    }
+    &--pwa{background-color:$quaternary-color;}
 }
 @media (max-width:720px) {
     .section-3__container-projects{

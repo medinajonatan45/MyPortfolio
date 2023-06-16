@@ -20,3 +20,16 @@ window.addEventListener("scroll", function(){
     }
 });
 
+// Animacion Uso de API Observer
+function verificarVisibilidad(entries){
+    let entry = entries[0];
+
+    if(entry.isIntersecting){
+        elemento.classList.add("visible");
+    }
+}
+
+let observer = new IntersectionObserver(verificarVisibilidad,{})
+let elemento = document.querySelector(".section-1__section-text");
+observer.observe(elemento);
+

@@ -329,6 +329,15 @@
 }
 .section-1__section-text {
   color: #ffffff;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: all 1s ease;
+}
+.section-1__section-text.visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1s ease;
+  transition-delay: 1s;
 }
 .section-1__section-button {
   padding: 2em 0;
@@ -345,11 +354,16 @@
 /********************  Section 2: Skills ********************/
 .section-2 {
   user-select: none;
-  background-color: #000000;
+  background: linear-gradient(90deg, #000000, #0a8967);
   color: #ffffff;
   display: grid;
   grid-template-columns: 45% auto;
   grid-template-rows: auto;
+}
+@media (max-width: 920px) {
+  .section-2 {
+    background: linear-gradient(90deg, #000000, #000000);
+  }
 }
 .section-2__img--img-1 {
   width: 4em;
@@ -397,19 +411,43 @@
   transition: all 1s ease;
 }
 
+.section-2 {
+  overflow: hidden;
+}
+.section-2__h2 {
+  transform: skewX(20deg);
+}
+@media (max-width: 920px) {
+  .section-2__h2 {
+    transform: skewX(0);
+  }
+}
 .section-2__section-services {
   font-family: "Inter", sans-serif;
-  padding: 3em 3vw;
   color: #ffffff;
+  background-color: #000000;
+  padding: 3em 3vw;
+  transform: skewX(-20deg);
+}
+@media (max-width: 920px) {
+  .section-2__section-services {
+    transform: skewX(0);
+  }
 }
 .section-2__education {
   padding: 1em 0;
+  transform: skewX(20deg);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: auto;
+}
+@media (max-width: 920px) {
+  .section-2__education {
+    transform: skewX(0);
+  }
 }
 .section-2__section-subtitle {
   display: flex;
@@ -420,7 +458,6 @@
   gap: 1em;
 }
 .section-2__section-skills-background {
-  background-color: rgba(0, 0, 0, 0.7764705882);
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -460,6 +497,13 @@
   display: grid;
   grid-template-columns: 33.3% 33.3% 33.3%;
   grid-template-rows: auto;
+}
+@media (max-width: 1080px) {
+  .section-3__container-projects {
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    grid-template-rows: auto;
+  }
 }
 
 .project {
@@ -552,6 +596,7 @@
   border-radius: 0.2em;
   color: #000000;
   font-size: 0.8em;
+  font-weight: bold;
 }
 .project__span--html {
   background-color: #09c184;
@@ -572,27 +617,6 @@
   background-color: #09c184;
 }
 
-@keyframes tag_pwa {
-  100% {
-    background-color: rgb(251, 32, 255);
-  }
-  90% {
-    background-color: rgb(32, 255, 244);
-  }
-  80% {
-    background-color: rgb(32, 114, 255);
-  }
-  80% {
-    background-color: rgb(32, 255, 69);
-  }
-}
-@media (max-width: 1080px) {
-  .section-3__container-projects {
-    display: grid;
-    grid-template-columns: 45vw 45vw;
-    grid-template-rows: auto;
-  }
-}
 @media (max-width: 720px) {
   .section-3__container-projects {
     display: flex;
