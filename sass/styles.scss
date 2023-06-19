@@ -579,26 +579,60 @@ $primary-text-font:'Inter', sans-serif;
     user-select: none;
     font-family: $primary-text-font;
     background-color: $primary-color;
-    color: $primary-text-color;
-    text-align: center;
     padding: 2em 0;
     @include Flex-System(column, center, center, nowrap, 1em);
 
+    &__section--social{
+        @include Flex-System(row, center, center, nowrap, 1em);
+
+        &::after{
+            content: "";
+            width: 5em;
+            height: 0.1em;
+            background-color: white;
+        }
+        &::before{
+            content: "";
+            width: 5em;
+            height: 0.1em;
+            background-color: white;
+        }
+    }
+    &__section--copyright{
+        @include Flex-System(column, center, center, nowrap, 0.5em);
+    }
     &__a{
         color: $primary-text-color;
         text-decoration: none;
         transition: all 0.5s ease;
 
+        &:hover{color: $quinary-color;}
+        &:active{color: $quinary-color;}
+        &--text{
+            font-size: 0.8em;
+        }
         &--rocket{
-            font-size: 2em;
+            font-size: 1.4em;
         }
-        &:hover{
+        &--social{
             color: $quinary-color;
-            text-decoration: none;
-        }
-        &:active{
-            color: $quinary-color;
-            text-decoration: none;
+            font-size: 1.0em;
+            border: 0.06em solid $quinary-color;
+            height: 2em;
+            width: 2em;
+            border-radius: 10em;
+            @include Flex-System(row, center, center, nowrap, 0);
+
+            &:hover{
+                background-color: white;
+                border: 0.06em solid white;
+                color: $primary-color;
+            }
+            &:active{
+                background-color: white;
+                border: 0.06em solid white;
+                color: $primary-color;
+            }
         }
     }
 }
