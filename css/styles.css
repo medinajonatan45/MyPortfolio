@@ -186,8 +186,9 @@
   margin: 0;
 }
 .head__h2 {
-  color: #0a8967;
-  font-size: 3.5vw;
+  color: #09c184;
+  font-size: 3vw;
+  text-shadow: 0em 0em 1.5em #07f9a2;
 }
 .head__a {
   background-color: #000000;

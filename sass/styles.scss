@@ -198,8 +198,10 @@ $primary-text-font:'Inter', sans-serif;
         margin: 0;
     }
     &__h2{
-        color: $tertiary-color;
-        font-size: 3.5vw;
+        color: $quaternary-color;
+        // font-size: 3.5vw;
+        font-size: 3vw;
+        text-shadow: 0em 0em 1.5em $quinary-color;
     }
     &__a{
         background-color: $primary-color;
