@@ -1,4 +1,12 @@
 @charset "UTF-8";
+html::-webkit-scrollbar {
+  background-color: #0d0d0d;
+  width: 0.5rem;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #07f9a2;
+}
+
 .body {
   margin: 0;
   padding: 0;

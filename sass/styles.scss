@@ -36,6 +36,15 @@ $primary-text-font:'Inter', sans-serif;
     }
 }
 // Styles
+html{
+    &::-webkit-scrollbar{
+        background-color: $secundary-color;
+        width: 0.5rem;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $quinary-color;
+    }
+}
 .body{
     margin: 0;
     padding: 0;
